@@ -32,3 +32,21 @@ Reuse a seed
  $ lorem -s 1595535435300688293 8
  Multa venustate et omni sale idem Lucilius, apud.
 ```
+
+## Building
+
+```
+ $ cargo build --release
+```
+
+## Installing
+
+From crates.io
+```
+ $ cargo install lorem
+```
+
+From source
+```
+ $ cargo install --path .
+```
