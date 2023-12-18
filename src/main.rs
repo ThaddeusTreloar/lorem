@@ -15,7 +15,7 @@ fn main() {
     let seed = args.seed();
 
     if args.dump_seed() {
-        eprint!("{seed}");
+        eprintln!("{seed}");
     }
 
     let mut rng = StdRng::seed_from_u64(seed as u64);

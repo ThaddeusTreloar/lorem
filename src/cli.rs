@@ -9,18 +9,18 @@ pub struct Args {
     /// Generate n paragraphs instead.
     #[arg(short)]
     paragraph: bool,
-    /// Add a title to the text.
+    /// Dump the seed to stderr. Disabled if a seed is specified.
     #[arg(short)]
-    title: bool,
-    /// Whether to add markdown
-    #[arg(short)]
-    md: bool,
+    dump_seed: bool,
     /// The seed to use for the random number generator.
     #[arg(short)]
     seed: Option<usize>,
-    /// Dump the seed to stderr.
-    #[arg(short)]
-    dump_seed: bool,
+    // Add a title to the text.
+    //#[arg(short)]
+    title: bool,
+    // Whether to add markdown
+    //#[arg(short)]
+    md: bool,
 }
 
 impl Args {
@@ -45,6 +45,6 @@ impl Args {
     }
 
     pub fn dump_seed(&self) -> bool {
-        self.dump_seed
+        self.dump_seed & self.seed.is_none()
     }
 }
