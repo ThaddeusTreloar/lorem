@@ -38,8 +38,8 @@ fn main() {
         (0..args.length())
             .map(|_| base + rng.gen::<usize>() % MAX)
             .collect::<Vec<usize>>()
-            .iter()
-            .map(|length| lipsum_words_with_rng(&mut rng, *length))
+            .into_iter()
+            .map(|length| lipsum_words_with_rng(&mut rng, length))
             .for_each(|paragraph| println!("{paragraph}\n"));
     } else {
         let lorem = lipsum_words_with_rng(rng, args.length());
